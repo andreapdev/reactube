@@ -3,7 +3,7 @@ import {Col} from 'react-bootstrap';
 
 function VideoDetail (props) {
     return (
-        <Col >
+        <Col xs={8}>
             <p>Video Detail</p>
         </Col>
     );
