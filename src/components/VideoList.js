@@ -1,28 +1,17 @@
 import VideoItem from './VideoItem';
 
 function VideoList (props) {
-    const displayResults = () => {
-        console.log(props.videoResults);
-        let arrVideos = [];
-        for (let x=0; x<5; x++) {
-            if(props.videoResults[x]){
-                arrVideos.push(props.videoResults[x].etag)
-            } else { return null}
-        }
-        for (let x=0; x>arrVideos; x++) {
-
-        }
-    }
+    console.log(props.videoResults);
     const ItemList = () => {
         let arrItems=[]
         for (let x=0; x<props.videoResults.length; x++){
-            arrItems.push(<VideoItem key={x} />)
+            arrItems.push(<VideoItem key={x} id={x} videoResults={props.videoResults} />)
         }
         return [arrItems];
     }
     return (
         <div>
-            <p>Video List</p>
+            <p>Results</p>
             <ItemList />
         </div>
     );

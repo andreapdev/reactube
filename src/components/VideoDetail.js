@@ -1,9 +1,11 @@
+import React from 'react';
+import {Col} from 'react-bootstrap';
 
 function VideoDetail (props) {
     return (
-        <div>
+        <Col >
             <p>Video Detail</p>
-        </div>
+        </Col>
     );
 }
 

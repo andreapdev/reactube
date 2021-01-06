@@ -4,6 +4,7 @@ import './App.css';
 import SearchBar from './components/SearchBar';
 import VideoDetail from './components/VideoDetail';
 import VideoList from './components/VideoList';
+import {Row, Container} from 'react-bootstrap';
 
 
 function App() {
@@ -44,12 +45,15 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <SearchBar handleSubmit={handleSubmit} />
-      <VideoDetail />
-      <VideoList videoResults={videoResults} handleVideoSelect={handleVideoSelect}/>
-
-    </div>
+    <Container className="App">
+      <Row>
+        <SearchBar handleSubmit={handleSubmit} />
+      </Row>
+      <Row>
+        <VideoDetail />
+        <VideoList videoResults={videoResults} handleVideoSelect={handleVideoSelect}/>
+      </Row>
+    </Container>
   );
 }
 
