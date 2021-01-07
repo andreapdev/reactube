@@ -8,7 +8,7 @@ function VideoItem (props) {
 
     console.log(thumbnailHeight, thumbnailWidth)
     return (
-        <Card >
+        <Card onClick={()=>props.handleVideoSelect(props.id)}>
             <Card.Title>{videoTitle}</Card.Title>
             <div>
             <Image className="embed-responsive embed-responsive-4by3" src={videoThumbnail} alt={videoTitle}  />

@@ -26,6 +26,7 @@ function App() {
           part: 'snippet',
           maxResults: 5,
           key: 'AIzaSyBD18tkfB5wEatzomVntEGXhczaSh1u_6E',
+          type:'video'
         }
       })
 
@@ -41,7 +42,7 @@ function App() {
   }, [videoResults]);
   
   const handleVideoSelect = sel =>{
-
+    setSelectedVideo(sel);
   }
 
   return (
@@ -50,7 +51,7 @@ function App() {
         <SearchBar handleSubmit={handleSubmit} />
       </Row>
       <Row>
-        <VideoDetail />
+        <VideoDetail videoResults={videoResults} selectedVideo={selectedVideo}/>
         <VideoList videoResults={videoResults} handleVideoSelect={handleVideoSelect}/>
       </Row>
     </Container>

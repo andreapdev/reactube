@@ -7,7 +7,13 @@ function VideoList (props) {
     const ItemList = () => {
         let arrItems=[]
         for (let x=0; x<props.videoResults.length; x++){
-            arrItems.push(<VideoItem key={x} id={x} videoResults={props.videoResults} />)
+            arrItems.push(
+                <VideoItem 
+                    key={x} 
+                    id={x} 
+                    videoResults={props.videoResults} 
+                    handleVideoSelect={props.handleVideoSelect} 
+                />)
         }
         return [arrItems];
     }
