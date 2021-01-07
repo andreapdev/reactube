@@ -3,8 +3,6 @@ import {Form}from 'react-bootstrap';
 
 function SearchBar (props) {
     let term=null;
-    let searchMsg=null;
-
     const handleKeyDown = (e) => {
         term=e.target.value;
         if(e.key==="Enter"){
@@ -13,16 +11,15 @@ function SearchBar (props) {
         }
     }
 
-
     return (
-        <Form>
-            <Form.Group>
-                <Form.Control type='text' placeholder='Search' onKeyDown={handleKeyDown}></Form.Control>
-                <Form.Text>{searchMsg}</Form.Text>
-            </Form.Group>
+        <Form className='w-75 my-4'>
+            <Form.Control 
+                type='text' 
+                placeholder='Search' 
+                onKeyDown={handleKeyDown}
+            ></Form.Control>
         </Form>
     );
-
 }
 
 export default SearchBar;

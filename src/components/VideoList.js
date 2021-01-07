@@ -1,5 +1,5 @@
 import VideoItem from './VideoItem';
-import {Col} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 import React from 'react';
 
 function VideoList (props) {
@@ -18,9 +18,8 @@ function VideoList (props) {
         return [arrItems];
     }
     return (
-        <Col xs={4}>
-            <p>Results</p>
-            <ItemList />
+        <Col xs={4} className='my-4'>
+            <Row><ItemList /></Row>
         </Col>
     );
 }

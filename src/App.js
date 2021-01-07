@@ -8,15 +8,12 @@ import {Row, Container} from 'react-bootstrap';
 
 
 function App() {
-
   const [videoResults, setVideoResults]=useState([]);
   const [selectedVideo, setSelectedVideo]=useState(null);
 
   const handleSubmit = async (termFromSearch) => {
-   
     const apiUrl = 'https://www.googleapis.com/youtube/v3';
-    const axios = require('axios');
-    
+    const axios = require('axios'); 
     try{
       const response = await axios({
         method: 'get',
@@ -29,7 +26,6 @@ function App() {
           type:'video'
         }
       })
-
       setVideoResults(response.data.items);
 
     } catch(error) {
@@ -47,7 +43,7 @@ function App() {
 
   return (
     <Container className="App">
-      <Row>
+      <Row className='justify-content-center'>
         <SearchBar handleSubmit={handleSubmit} />
       </Row>
       <Row>

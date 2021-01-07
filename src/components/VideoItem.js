@@ -1,20 +1,20 @@
 import React from 'react';
-import {Card, Image} from 'react-bootstrap'
+import {Col, Row, Image} from 'react-bootstrap'
 function VideoItem (props) {
     const videoTitle=props.videoResults[props.id].snippet.title;
     const videoThumbnail=props.videoResults[props.id].snippet.thumbnails.default.url;
-    const thumbnailHeight=props.videoResults[props.id].snippet.thumbnails.default.height;
-    const thumbnailWidth=props.videoResults[props.id].snippet.thumbnails.default.width;
 
-    console.log(thumbnailHeight, thumbnailWidth)
     return (
-        <Card onClick={()=>props.handleVideoSelect(props.id)}>
-            <Card.Title>{videoTitle}</Card.Title>
-            <div>
-            <Image className="embed-responsive embed-responsive-4by3" src={videoThumbnail} alt={videoTitle}  />
-            </div>
-
-        </Card>
+        <Col xs={12}
+            onClick={()=>props.handleVideoSelect(props.id)}
+            className=' mb-2'
+        >
+            <Row>
+                <Col><Image src={videoThumbnail} alt={videoTitle} className='embed-responsive'/></Col>
+                <Col><p>{videoTitle}</p></Col>
+            </Row>
+            
+        </Col>
     );
 }
 
