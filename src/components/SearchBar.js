@@ -1,13 +1,17 @@
 import React from 'react';
 import {Form}from 'react-bootstrap';
+import {useHistory} from 'react-router-dom';
+
 
 function SearchBar (props) {
     let term=null;
+    let history=useHistory();
     const handleKeyDown = (e) => {
         term=e.target.value;
         if(e.key==="Enter"){
             e.preventDefault();
-            props.handleSubmit(term);
+            props.handleSubmit(term);   
+            history.push('/');
         }
     }
 
@@ -18,6 +22,7 @@ function SearchBar (props) {
                 placeholder='Search' 
                 onKeyDown={handleKeyDown}
             ></Form.Control>
+            
         </Form>
     );
 }

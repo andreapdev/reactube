@@ -1,54 +1,51 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios'
-import './App.css';
-import SearchBar from './components/SearchBar';
-import VideoDetail from './components/VideoDetail';
-import VideoList from './components/VideoList';
-import {Row, Container} from 'react-bootstrap';
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./App.css";
+import Routes from "./navigation/Routes";
+import { Row, Container } from "react-bootstrap";
 
 function App() {
-  const [videoResults, setVideoResults]=useState([]);
-  const [selectedVideo, setSelectedVideo]=useState(null);
+  const [videoResults, setVideoResults] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const handleSubmit = async (termFromSearch) => {
-    const apiUrl = 'https://www.googleapis.com/youtube/v3';
-    const axios = require('axios'); 
-    try{
+    const apiUrl = "https://www.googleapis.com/youtube/v3";
+    const axios = require("axios");
+    try {
       const response = await axios({
-        method: 'get',
-        url: apiUrl+'/search', 
+        method: "get",
+        url: apiUrl + "/search",
         params: {
-          q:termFromSearch,
-          part: 'snippet',
+          q: termFromSearch,
+          part: "snippet",
           maxResults: 5,
-          key: 'AIzaSyBD18tkfB5wEatzomVntEGXhczaSh1u_6E',
-          type:'video'
-        }
-      })
+          key: "AIzaSyBD18tkfB5wEatzomVntEGXhczaSh1u_6E",
+          type: "video",
+        },
+      });
       setVideoResults(response.data.items);
-
-    } catch(error) {
+    } catch (error) {
       console.log("error", error);
     }
-  }
+  };
 
   useEffect(() => {
     console.log(videoResults);
   }, [videoResults]);
-  
-  const handleVideoSelect = sel =>{
+
+  const handleVideoSelect = (sel) => {
     setSelectedVideo(sel);
-  }
+  };
 
   return (
     <Container className="App">
-      <Row className='justify-content-center'>
-        <SearchBar handleSubmit={handleSubmit} />
-      </Row>
       <Row>
-        <VideoDetail videoResults={videoResults} selectedVideo={selectedVideo}/>
-        <VideoList videoResults={videoResults} handleVideoSelect={handleVideoSelect}/>
+        <Routes
+          videoResults={videoResults}
+          selectedVideo={selectedVideo}
+          handleSubmit={handleSubmit}
+          handleVideoSelect={handleVideoSelect}
+        />
       </Row>
     </Container>
   );
