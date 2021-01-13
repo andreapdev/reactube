@@ -1,5 +1,5 @@
 import VideoItem from './VideoItem';
-import {Col, Row} from 'react-bootstrap';
+import {CardDeck} from 'react-bootstrap';
 import React from 'react';
 
 function VideoList (props) {
@@ -22,9 +22,7 @@ function VideoList (props) {
          }
     }
     return (
-        <Row  className='my-4'>
-            <Col><ItemList /></Col>
-        </Row>
+        <CardDeck className='row mb-4'><ItemList /></CardDeck>
     );
 }
 

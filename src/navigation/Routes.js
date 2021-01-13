@@ -14,10 +14,9 @@ import Watching from './Watching';
 
 function Routes(props) {
   return (
-    
     <Router>
       <Navigation submitted={props.submitted}/>
-      <Col xs={8}>
+      <Col xs={10}>
         <Row className="justify-content-center">
           <SearchBar handleSubmit={props.handleSubmit} />
         </Row>

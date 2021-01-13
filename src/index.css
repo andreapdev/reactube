@@ -1,13 +1,56 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* COLORS:
+#f4f1de
+#e07a5f
+#3d405b
+#81b29a
+#f2cc8f
+*/
+/* Body */
+body{
+  background-color: #3d405b;
+  color: #f4f1de;
+  height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+/* DEV */
+.where{
+  background-color: #e07a5f;
+  border-color: hotpink;
+}
+/* Navigation */
+.navbar-col{
+  background-color: #f4f1de34;
+}
+.navbar-nav{
+  height: 100vh;
+  text-align: right;
+}
+.nav-link{
+  color: inherit;
+}
+.nav-link:hover{
+  color: #81b29a;
+}
+/* Card */
+.card{
+  color: #3d405b;
+  border: none;
+}
+.card-img{
+  object-fit: cover;
+  height: 6rem;
+}
+
+
+/* Favorite Button */
+.fav-button{
+  border: none;
+  background-color: transparent;
+}
+.fav-button:focus{
+  outline: none;
+  color:#f2cc8f;
+}
+.fav-star:hover{
+  color:#f2cc8f;
+}

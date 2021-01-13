@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";
+
 import Routes from "./navigation/Routes";
 import { Row, Container } from "react-bootstrap";
 
@@ -18,7 +18,7 @@ function App() {
         params: {
           q: termFromSearch,
           part: "snippet",
-          maxResults: 5,
+          maxResults: 4,
           key: "AIzaSyBD18tkfB5wEatzomVntEGXhczaSh1u_6E",
           type: "video",
         },
@@ -38,8 +38,8 @@ function App() {
   };
 
   return (
-    <Container className="App">
-      <Row>
+    <Container fluid className="App">
+      <Row className='h-100'>
         <Routes
           videoResults={videoResults}
           selectedVideo={selectedVideo}

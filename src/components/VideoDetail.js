@@ -14,7 +14,8 @@ function VideoDetail (props) {
                 <div className='embed-responsive embed-responsive-16by9'>
                     <iframe src={videoUrl} title={videoTitle} />
                 </div>
-                <h3>{videoTitle}</h3>
+                <h3>{videoTitle} <button className='fav-button'><i className="fas fa-star fav-star"></i></button></h3>
+                
                 <p>{videoDescription}</p>
             </Col>
         );

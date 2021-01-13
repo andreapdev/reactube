@@ -1,38 +1,41 @@
 import React from 'react';
 import {Col} from 'react-bootstrap'
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter } from 'react-router-dom';
 
 function Navigation (props) {
     return(
-        <Col xs={4}>
-            <ul className="navbar-nav ml-auto">
+        <Col xs={2} className= 'navbar-col' >
+            <ul className='navbar-nav'>
                 <li
-                    className={`nav-item  ${
-                    props.location.pathname === "/" ? "active" : ""
+                    className={`p-4 nav-item  ${
+                    props.location.pathname === '/' ? 'active' : ''
                     }`}
                 >
-                <Link className="nav-link" to="/">
-                    Home
-                    <span className="sr-only">(current)</span>
-                </Link>
+                    <Link className='nav-link' to='/'>
+                        <span>Home </span>
+                        <i class='fas fa-home'></i>
+                        <span className='sr-only'>(current)</span>
+                    </Link>
                 </li>
                 <li
-                    className={`nav-item  ${
-                    props.location.pathname === "/history" ? "active" : ""
+                    className={`p-4 nav-item  ${
+                    props.location.pathname === '/history' ? 'active' : ''
                     }`}
                 >
-                <Link className="nav-link" to="/history">
-                    History
-                </Link>
+                    <Link className='nav-link' to='/history'>
+                        <span>History </span>
+                        <i class='fas fa-history'></i>
+                    </Link>
                 </li>
                 <li
-                    className={`nav-item  ${
-                    props.location.pathname === "/favorites" ? "active" : ""
+                    className={`p-4 nav-item  ${
+                    props.location.pathname === '/favorites' ? 'active' : ''
                     }`}
                 >
-                <Link className="nav-link" to="/favorites">
-                    Favorites
-                </Link>
+                    <Link className='nav-link' to='/favorites'>
+                        <span>Favorites </span>
+                        <i class='fas fa-star'></i>
+                    </Link>
                 </li>
             </ul>
         </Col>
